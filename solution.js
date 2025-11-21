@@ -33,3 +33,7 @@ function filterByRating(items) {
 function filterActiveUsers(users) {
     return users.filter(function (user) { return user.isActive === true; });
 }
+function printBookDetails(book) {
+    var availability = book.isAvailable ? "Yes" : "No";
+    console.log("Title : ".concat(book.title, ", Author: ").concat(book.author, ", Published: ").concat(book.publishedYear, ", Available : ").concat(availability));
+}
