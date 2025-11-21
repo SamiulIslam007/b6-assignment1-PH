@@ -87,3 +87,22 @@ function getUniqueValues(
 
   return unique;
 }
+
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}
+
+function calculateTotalPrice(products: Product[]): number {
+  return products.reduce((total, product) => {
+    let productTotal = product.price * product.quantity;
+
+    if (product.discount !== undefined) {
+      const discountAmmount = productTotal * (product.discount / 100);
+      productTotal -= discountAmmount;
+    }
+    return total + productTotal;
+  }, 0);
+}
