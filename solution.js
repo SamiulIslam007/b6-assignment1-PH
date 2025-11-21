@@ -1,4 +1,3 @@
-// Problem 1
 function formatValue(value) {
     if (typeof value === "string") {
         return value.toUpperCase();
@@ -10,6 +9,14 @@ function formatValue(value) {
         return !value;
     }
 }
-console.log(formatValue("hello")); // "HELLO"
-console.log(formatValue(5)); // 50
-console.log(formatValue(true)); // false
+// Problem 2
+function getLength(value) {
+    if (typeof value === "string") {
+        return value.length;
+    }
+    else if (Array.isArray(value)) {
+        return value.length;
+    }
+}
+console.log(getLength("Hello")); // Output: 5
+console.log(getLength([1, 2, 3, 4, 5])); // Output: 5
