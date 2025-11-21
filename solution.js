@@ -9,7 +9,6 @@ function formatValue(value) {
         return !value;
     }
 }
-// Problem 2
 function getLength(value) {
     if (typeof value === "string") {
         return value.length;
@@ -18,5 +17,13 @@ function getLength(value) {
         return value.length;
     }
 }
-console.log(getLength("Hello")); // Output: 5
-console.log(getLength([1, 2, 3, 4, 5])); // Output: 5
+var Person = /** @class */ (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.getDetails = function () {
+        return "'Name: ".concat(this.name, ", Age: ").concat(this.age, "'");
+    };
+    return Person;
+}());
