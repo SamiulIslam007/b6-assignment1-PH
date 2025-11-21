@@ -1,3 +1,12 @@
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 function formatValue(value) {
     if (typeof value === "string") {
         return value.toUpperCase();
@@ -35,5 +44,23 @@ function filterActiveUsers(users) {
 }
 function printBookDetails(book) {
     var availability = book.isAvailable ? "Yes" : "No";
-    console.log("Title : ".concat(book.title, ", Author: ").concat(book.author, ", Published: ").concat(book.publishedYear, ", Available : ").concat(availability));
+}
+function getUniqueValues(arr1, arr2) {
+    var combined = __spreadArray(__spreadArray([], arr1, true), arr2, true);
+    var unique = [];
+    for (var _i = 0, combined_1 = combined; _i < combined_1.length; _i++) {
+        var item = combined_1[_i];
+        var isDuplicate = false;
+        for (var _a = 0, unique_1 = unique; _a < unique_1.length; _a++) {
+            var uniqueItem = unique_1[_a];
+            if (uniqueItem === item) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate) {
+            unique.push(item);
+        }
+    }
+    return unique;
 }

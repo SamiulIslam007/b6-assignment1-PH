@@ -61,8 +61,29 @@ interface Book {
 
 function printBookDetails(book: Book): void {
   const availability = book.isAvailable ? "Yes" : "No";
+}
 
-  console.log(
-    `Title : ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available : ${availability}`
-  );
+function getUniqueValues(
+  arr1: (string | number)[],
+  arr2: (string | number)[]
+): (string | number)[] {
+  const combined = [...arr1, ...arr2];
+
+  const unique: (string | number)[] = [];
+
+  for (const item of combined) {
+    let isDuplicate = false;
+
+    for (const uniqueItem of unique) {
+      if (uniqueItem === item) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) {
+      unique.push(item);
+    }
+  }
+
+  return unique;
 }
