@@ -31,3 +31,12 @@ class Person {
     return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
+
+interface RatingItem {
+  title: string;
+  rating: number;
+}
+
+function filterByRating(items: RatingItem[]): RatingItem[] {
+  return items.filter((item) => item.rating >= 4);
+}

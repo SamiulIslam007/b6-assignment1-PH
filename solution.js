@@ -27,3 +27,6 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
+function filterByRating(items) {
+    return items.filter(function (item) { return item.rating >= 4; });
+}
