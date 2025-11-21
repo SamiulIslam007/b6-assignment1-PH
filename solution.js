@@ -30,3 +30,6 @@ var Person = /** @class */ (function () {
 function filterByRating(items) {
     return items.filter(function (item) { return item.rating >= 4; });
 }
+function filterActiveUsers(users) {
+    return users.filter(function (user) { return user.isActive === true; });
+}
